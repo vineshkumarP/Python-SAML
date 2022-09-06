@@ -1,0 +1,24 @@
+import auth.login
+import artifactory
+
+"idp": {
+
+  "entityId": "https://hitachivantara.okta.com/app/UserHome" 
+  "singleSignOnService " : {
+         "url" : "https://hitachivantara.okta.com/app/UserHome"
+      "binding" : "saml:binding:HTTP-POST"
+   }
+   "singleLogoutService": {
+            "url" : "https://hitachivantara.okta.com/app/UserHome"
+              "binding" : "saml:binding:HTTP-Redirect"
+}
+
+from artifactory import ArtifactoryPath
+path = ArtifactoryPath("https://hitachi.jfrog.io/artifactory/generic/latest-v5.x/node-v5.12.0-darwin-x64.tar.gz",
+       auth=('vinesh.kumar','Newtask@202'))
+    // token="MY_ACCESS_TOKEN"
+    // apikey="MY_API_KEY"
+
+for p in path.glob("**/*.gz"):
+print(p)
+
